@@ -12,7 +12,7 @@ export default function UrlForm({ onShorten }) {
 
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:4000/api/url/shorten", {
+      const res = await axios.post("https://url-shortener-app-backend-kt8e.onrender.com/api/url/shorten", {
         originalUrl: url,
       });
       onShorten(res.data);
