@@ -46,8 +46,8 @@ export const redirectUrl = async (req, res) => {
     const { shortId } = req.params;
     try {
         // 1️⃣ Check Redis cache first
-        // const cached = await redisClient.get(shortId);
-        // if (cached) return res.redirect(301, cached);
+        const cached = await redisClient.get(shortId);
+        if (cached) return res.redirect(301, cached);
 
         // 2️⃣ Fallback to DB
         const url = await Url.findOne({ shortId });
