@@ -4,8 +4,8 @@ import { shortenUrl, redirectUrl, listUrls } from "../controllers/urlController.
 
 const router = Router();
 
+router.get("/list/all", listUrls);
 router.post("/shorten", shortenUrl);
 router.get("/:shortId", redirectUrl);
-router.get("/list/all", listUrls);
 
 export default router;
